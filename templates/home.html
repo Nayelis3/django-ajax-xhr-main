@@ -120,7 +120,8 @@
 
       const todoId = updateTodoForm.elements["todoIdPut"].value;
       const singleTodoUrl = `/todos/${todoId}/`;
-      updateTodo(singleTodoUrl, formData);
+      //updateTodo(singleTodoUrl, formData);
+      updateTodoAsync(singleTodoUrl, formData);
       updateTodoForm.reset();
     });
 
