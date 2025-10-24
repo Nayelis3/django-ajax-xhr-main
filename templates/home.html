@@ -102,7 +102,8 @@
         task: addTodoForm.elements["todoTaskPost"].value,
         completed: addTodoForm.elements["todoCompletedPost"].checked,
       }
-      addTodo(allTodosUrl, formData);
+      //addTodo(allTodosUrl, formData);
+      addTodoAsync(allTodosUrl, formData);
       addTodoForm.reset();
     });
 

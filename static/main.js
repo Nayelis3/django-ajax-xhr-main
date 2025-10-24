@@ -65,8 +65,7 @@ function getAllTodos(url) {
 
 };
 
-
-function addTodo(url, payload) {
+/*function addTodo(url, payload) {
   fetch(url, {
     method: "POST",
     credentials: "same-origin",
@@ -80,6 +79,21 @@ function addTodo(url, payload) {
   .then(data => {
     console.log(data);
   });
+}*/
+
+const addTodoAsync = async(url, payload) => {
+    r = await fetch(url, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRFToken": getCookie("csrftoken"),
+        },
+        body: JSON.stringify({payload: payload})
+      })
+
+      dt = await r.json();
+      console.log(dt);
 }
 
 
